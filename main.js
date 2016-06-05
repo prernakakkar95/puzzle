@@ -37,5 +37,32 @@ var _mouse; //to find out the current location of the cursor
     _canvas.height = _puzzleHeight;
     _canvas.style.border = "1px double black";
   }
-  
-  })
+  //a function to be called to set puzzle and when replaying
+  function initPuzzle(){
+    _pieces = []; // initialising with null
+    _mouse = {x:0,y:0}; // initialising mouse position
+    _currentPiece = null;
+    _currentDropPiece = null;
+    _stage.drawImage(_img, 0, 0, _puzzleWidth, _puzzleHeight, 0, 0, _puzzleWidth, _puzzleHeight);
+    buttonTitle("Lets play!");
+    buildPieces();
+ }
+ //styling of button
+   function buttonTitle(msg){
+    _stage.fillStyle = "#000000";
+    _stage.globalAlpha = .4;
+    _stage.fillRect(100,_puzzleHeight - 40,_puzzleWidth - 200,40);
+    _stage.fillStyle = "#FFFFFF";
+    _stage.globalAlpha = 1;
+    _stage.textAlign = "center";
+    _stage.textBaseline = "middle";
+    _stage.font = "20px Arial";
+    _stage.fillText(msg,_puzzleWidth / 2,_puzzleHeight - 20);
+    }
+ //building of pieces
+ //shuffle function
+ //to check the piece clicked
+ //update function
+ //game over
+ //score function
+  })();
