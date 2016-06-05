@@ -20,6 +20,22 @@ var _mouse; //to find out the current location of the cursor
        _img = new Image();
        _img.addEventListener('load',onImage,false);
        _img.src = "puzzle1.jpg";
-    
-	
-})
+  //  initialising values 
+	function onImage(e){
+    _pieceWidth = Math.floor(_img.width / PUZZLE_DIFFICULTY)
+    _pieceHeight = Math.floor(_img.height / PUZZLE_DIFFICULTY)
+    _puzzleWidth = _pieceWidth * PUZZLE_DIFFICULTY;
+    _puzzleHeight = _pieceHeight * PUZZLE_DIFFICULTY;
+    setCanvas();
+    initPuzzle();
+  }
+  //set the canvas
+   function setCanvas(){
+    _canvas = document.getElementById('canvas');
+    _stage = _canvas.getContext('2d');
+    _canvas.width = _puzzleWidth;
+    _canvas.height = _puzzleHeight;
+    _canvas.style.border = "1px double black";
+  }
+  
+  })
